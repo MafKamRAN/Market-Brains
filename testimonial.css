@@ -1,0 +1,157 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fb;
+  transition: opacity 0.75s, visibility 0.75s;
+  z-index: 100;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #ddd;
+  border-top-color: #7449f5;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  margin: 0rem 0.5rem;
+}
+
+a:hover {
+  color: rgba(152, 190, 36, 1);
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  padding: 0 2rem;
+  width: 100%;
+  z-index: 5;
+  backdrop-filter: blur(15px);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo img {
+  height: 63px;
+  cursor: pointer;
+  width: 126px;
+  object-fit: cover;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: none;
+}
+
+.navbar .toggle-btn:hover {
+  color: rgba(152, 190, 36, 1);
+}
+
+.contact-button {
+  background: linear-gradient(
+    to right,
+    rgba(152, 190, 36, 1),
+    rgba(30, 97, 140, 1)
+  );
+  height: 50px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+}
+
+.contact-link {
+  color: #fff;
+}
+
+.contact-link:hover {
+  color: white;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  height: 0;
+  right: 2rem;
+  top: 85px;
+  width: 300px;
+  padding: 3px 10px;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+  display: block;
+  height: 200px;
+}
+
+.dropdown-menu .contact-button {
+  height: 30%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-menu li {
+  margin: 0.8rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
